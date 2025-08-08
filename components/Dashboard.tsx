@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
 import { keywordData } from '../data/keywords';
-import { trafficData } from '../data/traffic';
 import KeywordsTable from './KeywordsTable';
-import TrafficTable from './TrafficTable';
 import SummaryCard from './SummaryCard';
 import { CheckCircleIcon, ArrowTrendingUpIcon } from './Icons';
 
@@ -35,20 +33,12 @@ const Dashboard: React.FC = () => {
         <SummaryCard title="Fortinet Keywords in AI Overview" value={`${summary.fortinetInAioCount} / ${summary.totalKeywords}`} icon={<CheckCircleIcon />} />
       </section>
 
-      <section className="mb-12">
+      <section>
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-fortinet-extra-dark-grey mb-2">Keyword Performance</h2>
           <p className="text-fortinet-medium-grey">Detailed analysis of keyword rankings and performance metrics</p>
         </div>
         <KeywordsTable data={keywordData} />
-      </section>
-
-      <section>
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold text-fortinet-extra-dark-grey mb-2">Website Traffic Performance</h2>
-          <p className="text-fortinet-medium-grey">Top 10 traffic Jan to July 2025</p>
-        </div>
-        <TrafficTable data={trafficData} />
       </section>
     </div>
   );
