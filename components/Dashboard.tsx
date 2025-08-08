@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
 import { keywordData } from '../data/keywords';
+import { trafficData } from '../data/traffic';
 import KeywordsTable from './KeywordsTable';
+import TrafficTable from './TrafficTable';
 import SummaryCard from './SummaryCard';
-import RankingChart from './RankingChart';
-import { CheckCircleIcon, ChartPieIcon, ArrowTrendingUpIcon } from './Icons';
+import { CheckCircleIcon, ArrowTrendingUpIcon } from './Icons';
 
 const Dashboard: React.FC = () => {
   const summary = useMemo(() => {
@@ -24,27 +25,30 @@ const Dashboard: React.FC = () => {
           AI Security - Performance Analysis
         </h1>
         <p className="text-lg text-fortinet-medium-grey">
-          Source: SEMrush & Google Live Search | US VPN
+          Source: SEMrush
         </p>
       </header>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-        <SummaryCard title="Fortinet Top 3 Ranks" value={`${summary.fortinetTop3Count} / ${summary.totalKeywords}`} icon={<ArrowTrendingUpIcon />} />
-        <SummaryCard title="Fortinet in AI Overview" value={`${summary.fortinetInAioCount} / ${summary.totalKeywords}`} icon={<CheckCircleIcon />} />
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <SummaryCard title="Total Keywords" value={summary.totalKeywords} icon={<ArrowTrendingUpIcon />} />
+        <SummaryCard title="Fortinet Keywords in Top 3 Rank" value={`${summary.fortinetTop3Count} / ${summary.totalKeywords}`} icon={<ArrowTrendingUpIcon />} />
+        <SummaryCard title="Fortinet Keywords in AI Overview" value={`${summary.fortinetInAioCount} / ${summary.totalKeywords}`} icon={<CheckCircleIcon />} />
       </section>
 
       <section className="mb-12">
-        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-          <h2 className="text-2xl font-semibold text-fortinet-extra-dark-grey mb-6 flex items-center">
-            <ChartPieIcon />
-            <span className="ml-3">Fortinet Organic Ranking Position</span>
-          </h2>
-          <RankingChart data={keywordData} />
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-fortinet-extra-dark-grey mb-2">Keyword Performance</h2>
+          <p className="text-fortinet-medium-grey">Detailed analysis of keyword rankings and performance metrics</p>
         </div>
+        <KeywordsTable data={keywordData} />
       </section>
 
       <section>
-        <KeywordsTable data={keywordData} />
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-fortinet-extra-dark-grey mb-2">Website Traffic Performance</h2>
+          <p className="text-fortinet-medium-grey">Top 10 traffic Jan to July 2025</p>
+        </div>
+        <TrafficTable data={trafficData} />
       </section>
     </div>
   );

@@ -15,7 +15,7 @@ const getRankingClass = (rank: number | null): string => {
 };
 
 const HeaderCell: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
-  <th scope="col" className={`p-3 text-sm font-medium text-gray-500 uppercase tracking-wider text-left ${className}`}>
+  <th scope="col" className={`p-3 text-sm font-black text-gray-700 uppercase tracking-wider text-left ${className}`}>
     {children}
   </th>
 );
