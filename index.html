@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Cybersecurity SEO Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'fortinet-red': '#da291c',
+              'fortinet-green': '#3cb17e',
+              'fortinet-teal': '#2cccd3',
+              'fortinet-blue': '#307fe2',
+              'fortinet-purple': '#9063cd',
+              'fortinet-yellow': '#ffb900',
+              'fortinet-light-grey': '#f0f0f0',
+              'fortinet-grey': '#c8c8c8',
+              'fortinet-medium-grey': '#969696',
+              'fortinet-dark-grey': '#646464',
+              'fortinet-extra-dark-grey': '#464646',
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "recharts": "https://esm.sh/recharts@^3.1.2",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-fortinet-light-grey">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

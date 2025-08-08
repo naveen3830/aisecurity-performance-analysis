@@ -1,0 +1,5 @@
+{
+  "name": "AI Cybersecurity SEO Dashboard",
+  "description": "A dashboard visualizing keyword ranking data for AI in cybersecurity, based on SEMrush and Google Live Search data.",
+  "requestFramePermissions": []
+}
